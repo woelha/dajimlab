@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>랜딩페이지</title>
+    <title>스크롤 가능한 이미지 페이지</title>
     <style>
-        body { margin: 0; padding: 0; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .image-container {
+            width: calc(100% - 40px);  /* 좌우 20px씩 마진 추가 */
+            max-width: 1200px;  /* 최대 너비 설정 */
+            height: auto;
+            margin: 0 auto;  /* 중앙 정렬 */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (max-width: 768px) {  /* 모바일 반응형 */
+            .image-container {
+                width: 100%;
+                margin: 0;
+            }
+        }
         #cta-button {
             position: fixed;
             bottom: 20px;
@@ -39,8 +60,9 @@
     </style>
 </head>
 <body>
-    <img src="https://leadgeny.kr/data/file/smarteditor2/2024-10-01/523cb43b36e69815cd3af98185322b85_1727777142_4775.png" alt="랜딩페이지 이미지" width="100%">
-
+    <div class="image-container">
+        <img src="images/다짐_광고랜딩_ver2.png" alt="다짐 재회학개론 무료 다운 선착순 100명">
+    </div>
     <button id="cta-button" onclick="showPopup()">신청하기</button>
 
     <div id="popup">
