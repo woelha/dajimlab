@@ -9,19 +9,20 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            font-family: 'Arial', sans-serif;
         }
         .image-container {
-            width: calc(100% - 40px);  /* 좌우 20px씩 마진 추가 */
-            max-width: 1200px;  /* 최대 너비 설정 */
+            width: calc(100% - 40px);
+            max-width: 1200px;
             height: auto;
-            margin: 0 auto;  /* 중앙 정렬 */
+            margin: 0 auto;
         }
         img {
             width: 100%;
             height: auto;
             display: block;
         }
-        @media (max-width: 768px) {  /* 모바일 반응형 */
+        @media (max-width: 768px) {
             .image-container {
                 width: 100%;
                 margin: 0;
@@ -35,10 +36,17 @@
             background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px 40px;
-            font-size: 16px;
+            padding: 15px 20px;
+            font-size: 18px;
             cursor: pointer;
             z-index: 1000;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        #cta-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
         #popup {
             display: none;
@@ -47,15 +55,48 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: white;
-            padding: 20px;
-            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             z-index: 1001;
+            width: 90%;
+            max-width: 400px;
         }
         #popup-close {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 20px;
             cursor: pointer;
+            font-size: 24px;
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+        #popup-close:hover {
+            color: #333;
+        }
+        #popup form {
+            display: flex;
+            flex-direction: column;
+        }
+        #popup input[type="text"] {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        #popup input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        #popup input[type="submit"]:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -66,12 +107,12 @@
     <button id="cta-button" onclick="showPopup()">신청안하면 너의 인생이 어떻게 될지 무섭지도 않느냐?</button>
 
     <div id="popup">
-        <span id="popup-close" onclick="closePopup()">X</span>
+        <span id="popup-close" onclick="closePopup()">&times;</span>
         <form action="https://leadgeny.kr/check/" onsubmit="return step_submit(this);">
             <input type="hidden" name="seq" value="4e4451334e7a633d"/>
             <input type="hidden" name="result_url" value="https://naver.com"/>
-            <input type="text" name="nm" placeholder="이름 입력"/>
-            <input type="text" name="hp" placeholder="휴대폰번호 입력"/>
+            <input type="text" name="nm" placeholder="이름 입력" required/>
+            <input type="text" name="hp" placeholder="휴대폰번호 입력" required/>
             <input type="submit" value="신청하기"/>
         </form>
     </div>
