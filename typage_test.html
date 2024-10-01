@@ -16,11 +16,25 @@
             max-width: 1200px;
             height: auto;
             margin: 0 auto;
+            padding-bottom: 60px; /* 버튼 높이만큼 여백 추가 */
         }
         img {
             width: 100%;
             height: auto;
             display: block;
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+            text-decoration: none;
+            z-index: 1000;
         }
         @media (max-width: 768px) {
             .image-container {
@@ -32,9 +46,10 @@
 </head>
 <body>
     <div class="image-container">
-        <a href="https://artin1ife.typeform.com/to/IxebjYGw?utm_source=typage&utm_campaign=facebook&utm_content=newlanding" target="_blank">
-            <img src="images/다짐_땡큐페이지.png" alt="다짐_땡큐페이지">
-        </a>
+        <img src="images/다짐_땡큐페이지.png" alt="다짐_땡큐페이지">
     </div>
+    <a href="https://artin1ife.typeform.com/to/IxebjYGw?utm_source=typage&utm_campaign=facebook&utm_content=newlanding" target="_blank" class="fixed-button">
+        재회 가능성 알아보기
+    </a>
 </body>
 </html>
