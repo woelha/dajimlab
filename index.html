@@ -11,13 +11,21 @@
             height: 100%;
         }
         .image-container {
-            width: 100%;
+            width: calc(100% - 40px);  /* 좌우 20px씩 마진 추가 */
+            max-width: 1200px;  /* 최대 너비 설정 */
             height: auto;
+            margin: 0 auto;  /* 중앙 정렬 */
         }
         img {
             width: 100%;
             height: auto;
             display: block;
+        }
+        @media (max-width: 768px) {  /* 모바일 반응형 */
+            .image-container {
+                width: 100%;
+                margin: 0;
+            }
         }
     </style>
 </head>
