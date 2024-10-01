@@ -1,0 +1,94 @@
+:root { 
+  --black: #000000;
+  --cloud: #c7c7c799;
+  --fuscous-gray: #555555;
+  --jewel: #135240;
+  --licorice: #111111;
+  --merino: #f6ede5;
+  --red: #ff0000;
+  --ship-gray: #3e3e3e;
+  --stack: #8d8d8d;
+  --suva-gray: #888888;
+  --viridian: #497c6e;
+  --white: #ffffff;
+  --woodsmoke: #101010cc;
+ 
+  --font-size-l: 49px;
+  --font-size-m: 41px;
+  --font-size-s: 40px;
+  --font-size-xl: 68px;
+  --font-size-xs: 38px;
+  --font-size-xxs: 34px;
+  --font-size-xxxs: 33.5px;
+ 
+  --font-family-gabiaheuldot-regular: "GabiaHeuldot-Regular", Helvetica;
+  --font-family-pretendard-black: "Pretendard-Black", Helvetica;
+  --font-family-pretendard-bold: "Pretendard-Bold", Helvetica;
+  --font-family-pretendard-extrabold: "Pretendard-ExtraBold", Helvetica;
+  --font-family-pretendard-medium: "Pretendard-Medium", Helvetica;
+  --font-family-pretendard-regular: "Pretendard-Regular", Helvetica;
+  --font-family-pretendard-semibold: "Pretendard-SemiBold", Helvetica;
+}
+.pretendard-regular-normal-ship-gray-41px {
+  color: var(--ship-gray);
+  font-family: var(--font-family-pretendard-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.pretendard-bold-ship-gray-41px {
+  color: var(--ship-gray);
+  font-family: var(--font-family-pretendard-bold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.pretendard-regular-normal-fuscous-gray-33-5px {
+  color: var(--fuscous-gray);
+  font-family: var(--font-family-pretendard-regular);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.pretendard-extra-extra-bold-viridian-49px {
+  color: var(--viridian);
+  font-family: var(--font-family-pretendard-extrabold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.pretendard-semi-bold-licorice-29-8px {
+  color: var(--licorice);
+  font-family: var(--font-family-pretendard-semibold);
+  font-size: 29.8px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.pretendard-black-merino-34px {
+  color: var(--merino);
+  font-family: var(--font-family-pretendard-black);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.pretendard-bold-white-39-7px {
+  color: var(--white);
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 39.7px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.pretendard-bold-black-68px {
+  color: var(--black);
+  font-family: var(--font-family-pretendard-bold);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+}
