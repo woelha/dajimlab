@@ -4,42 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재회학개론 신청이 완료됐습니다!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
         }
         .image-container {
-            width: calc(100% - 40px);
+            width: 100%;
             max-width: 1200px;
             height: auto;
             margin: 0 auto;
-            padding-bottom: 60px; /* 버튼 높이만큼 여백 추가 */
+            padding-bottom: 80px;
         }
         img {
             width: 100%;
             height: auto;
             display: block;
         }
-        .fixed-button {
+        .fixed-button-container {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #4CAF50;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .fixed-button {
+            display: block;
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #FF4081;
             color: white;
             text-align: center;
             padding: 15px 0;
             font-size: 18px;
+            font-weight: 700;
             text-decoration: none;
-            z-index: 1000;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .fixed-button:hover, .fixed-button:focus {
+            background-color: #E91E63;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
         @media (max-width: 768px) {
             .image-container {
                 width: 100%;
                 margin: 0;
+            }
+            .fixed-button {
+                font-size: 16px;
+                padding: 12px 0;
             }
         }
     </style>
@@ -48,8 +71,10 @@
     <div class="image-container">
         <img src="images/다짐_땡큐페이지.png" alt="다짐_땡큐페이지">
     </div>
-    <a href="https://artin1ife.typeform.com/to/IxebjYGw?utm_source=typage&utm_campaign=facebook&utm_content=newlanding" target="_blank" class="fixed-button">
-        재회 가능성 알아보기
-    </a>
+    <div class="fixed-button-container">
+        <a href="https://artin1ife.typeform.com/to/IxebjYGw?utm_source=typage&utm_campaign=facebook&utm_content=newlanding" target="_blank" class="fixed-button">
+            재회 가능성 알아보기 ▶
+        </a>
+    </div>
 </body>
 </html>
