@@ -3,35 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스크롤 가능한 이미지 페이지</title>
+    <title>랜딩페이지</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        body { margin: 0; padding: 0; }
+        #cta-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1000;
         }
-        .image-container {
-            width: calc(100% - 40px);  /* 좌우 20px씩 마진 추가 */
-            max-width: 1200px;  /* 최대 너비 설정 */
-            height: auto;
-            margin: 0 auto;  /* 중앙 정렬 */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 1001;
         }
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        @media (max-width: 768px) {  /* 모바일 반응형 */
-            .image-container {
-                width: 100%;
-                margin: 0;
-            }
+        #popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="images/다짐_광고랜딩_ver2.png" alt="다짐 재회학개론 무료 다운 선착순 100명">
+    <img src="https://leadgeny.kr/data/file/smarteditor2/2024-10-01/523cb43b36e69815cd3af98185322b85_1727777142_4775.png" alt="랜딩페이지 이미지" width="100%">
+
+    <button id="cta-button" onclick="showPopup()">신청하기</button>
+
+    <div id="popup">
+        <span id="popup-close" onclick="closePopup()">X</span>
+        <form action="https://leadgeny.kr/check/" onsubmit="return step_submit(this);">
+            <input type="hidden" name="seq" value="4e4451334e7a633d"/>
+            <input type="hidden" name="result_url" value="https://naver.com"/>
+            <input type="text" name="nm" placeholder="이름 입력"/>
+            <input type="text" name="hp" placeholder="휴대폰번호 입력"/>
+            <input type="text" name="em" placeholder="이메일 입력"/>
+            <input type="submit" value="신청하기"/>
+        </form>
     </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+        function step_submit(frm) {
+            if(frm.nm.value == "") {
+                alert("이름이 없습니다");
+                return false;
+            }
+            var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+            if (!regExp.test(frm.hp.value)) {
+                alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+                return false;
+            }
+            return true;
+        }
+
+        document.body.addEventListener('click', function(event) {
+            if (event.target.id !== 'cta-button' && !event.target.closest('#popup')) {
+                showPopup();
+            }
+        });
+    </script>
 </body>
 </html>
