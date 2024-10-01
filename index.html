@@ -98,6 +98,22 @@
         #popup input[type="submit"]:hover {
             background-color: #0056b3;
         }
+        #popup h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        #popup p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        #popup .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        #popup .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -108,11 +124,17 @@
 
     <div id="popup">
         <span id="popup-close" onclick="closePopup()">&times;</span>
+        <h2>재회학개론 무료 다운로드</h2>
+        <p>선착순 100명에게만 제공되는 특별한 기회! 지금 바로 신청하세요.</p>
         <form action="https://leadgeny.kr/check/" onsubmit="return step_submit(this);">
             <input type="hidden" name="seq" value="4e4451334e7a633d"/>
             <input type="hidden" name="result_url" value="https://naver.com"/>
             <input type="text" name="nm" placeholder="이름 입력" required/>
             <input type="text" name="hp" placeholder="휴대폰번호 입력" required/>
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">(필수) 개인정보 수집 및 이용에 동의합니다.</label>
+            </div>
             <input type="submit" value="신청하기"/>
         </form>
     </div>
@@ -134,6 +156,10 @@
             var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
             if (!regExp.test(frm.hp.value)) {
                 alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+                return false;
+            }
+            if (!frm.agree.checked) {
+                alert("개인정보 수집 및 이용에 동의해주세요.");
                 return false;
             }
             return true;
