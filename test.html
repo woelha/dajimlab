@@ -48,7 +48,7 @@
             background-color: #0056b3;
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
-        #popup {
+        #popup, #privacy-popup {
             display: none;
             position: fixed;
             top: 50%;
@@ -62,7 +62,12 @@
             width: 90%;
             max-width: 400px;
         }
-        #popup-close {
+        #privacy-popup {
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .popup-close {
             position: absolute;
             top: 15px;
             right: 20px;
@@ -71,7 +76,7 @@
             color: #aaa;
             transition: color 0.3s ease;
         }
-        #popup-close:hover {
+        .popup-close:hover {
             color: #333;
         }
         #popup form {
@@ -114,6 +119,11 @@
         #popup .checkbox-container input[type="checkbox"] {
             margin-right: 10px;
         }
+        .privacy-link {
+            text-decoration: underline;
+            color: #007BFF;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -123,7 +133,7 @@
     <button id="cta-button" onclick="showPopup()">신청안하면 너의 인생이 어떻게 될지 무섭지도 않느냐?</button>
 
     <div id="popup">
-        <span id="popup-close" onclick="closePopup()">&times;</span>
+        <span class="popup-close" onclick="closePopup()">&times;</span>
         <h2>재회학개론 무료 다운로드</h2>
         <p>선착순 100명에게만 제공되는 특별한 기회! 지금 바로 신청하세요.</p>
         <form action="https://leadgeny.kr/check/" onsubmit="return step_submit(this);">
@@ -133,10 +143,36 @@
             <input type="text" name="hp" placeholder="휴대폰번호 입력" required/>
             <div class="checkbox-container">
                 <input type="checkbox" id="agree" name="agree" required>
-                <label for="agree">(필수) 개인정보 수집 및 이용에 동의합니다.</label>
+                <label for="agree">(필수) <span class="privacy-link" onclick="showPrivacyPopup()">개인정보 수집 및 이용</span>에 동의합니다.</label>
             </div>
             <input type="submit" value="신청하기"/>
         </form>
+    </div>
+
+    <div id="privacy-popup">
+        <span class="popup-close" onclick="closePrivacyPopup()">&times;</span>
+        <h2>개인정보 수집</h2>
+        <h3>수집하는 개인정보 항목</h3>
+        <p>'(주)연결자들'은(는) 회원가입, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</p>
+        <ol>
+            <li>필수항목 : 이름, 휴대전화, 이메일, 주소</li>
+            <li>자동수집항목 : 서비스 이용기록, 방문로그, 쿠키, 방문IP정보</li>
+        </ol>
+        <h3>개인정보의 수집 및 이용목적</h3>
+        <p>'(주)연결자들'은(는) 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+        <ol>
+            <li>서비스 이용에 따른 본인식별, 실명확인, 가입의사 확인</li>
+            <li>고지사항 전달, 의사소통 경로 확보, 이벤트 당첨 물품 배송 시 정확한 배송지 정보 확보</li>
+            <li>신규 서비스 등 최신정보 개인 맞춤 서비스 제공을 위한 자료</li>
+            <li>불량회원 부정 이용 방지 및 비인가 사용 방지</li>
+            <li>기타 원활한 양질의 서비스 제공</li>
+        </ol>
+        <h3>개인정보의 보유 및 이용기간</h3>
+        <p>원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</p>
+        <p>회원으로서 '(주)연결자들'이(가) 제공하는 서비스 이용기간 동안 회원님의 개인정보는 '(주)연결자들'에서 계속 보유하게 되나 원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</p>
+        <p>이용약관 및 미풍양속을 해치는 등 서비스에 물의를 일으키는 경우, 불량사용자에 대해서는 이용자의 의사에 관계없이 강제탈퇴됩니다.</p>
+        <p>필수 개인정보 수집을 동의하지 않는 경우 귀하의 개인정보 수집을 거부할 수 있는 권리가 있으며, 이 경우 당사의 회원전용 서비스 또는 고객 문의사항에 대한 답변이 필수인 코너를 이용하는데 있어 회원 가입 또는 게시물 등록이 불가능 할 수 있습니다.</p>
+        <p>필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.</p>
     </div>
 
     <script>
@@ -146,6 +182,14 @@
         
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
+        }
+        
+        function showPrivacyPopup() {
+            document.getElementById('privacy-popup').style.display = 'block';
+        }
+        
+        function closePrivacyPopup() {
+            document.getElementById('privacy-popup').style.display = 'none';
         }
         
         function step_submit(frm) {
@@ -166,7 +210,7 @@
         }
 
         document.body.addEventListener('click', function(event) {
-            if (event.target.id !== 'cta-button' && !event.target.closest('#popup')) {
+            if (event.target.id !== 'cta-button' && !event.target.closest('#popup') && !event.target.closest('#privacy-popup')) {
                 showPopup();
             }
         });
