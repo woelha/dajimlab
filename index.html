@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재회학개론 받아보기(선착순 100명)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
         }
         .image-container {
             width: calc(100% - 40px);
             max-width: 1200px;
             height: auto;
             margin: 0 auto;
+            padding-bottom: 80px;
         }
         img {
             width: 100%;
@@ -38,14 +40,18 @@
             border: none;
             padding: 15px 20px;
             font-size: 18px;
+            font-weight: 700;
             cursor: pointer;
             z-index: 1000;
-            border-radius: 15px;
+            border-radius: 50px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            width: 90%;
+            max-width: 400px;
         }
-        #cta-button:hover {
+        #cta-button:hover, #cta-button:focus {
             background-color: #0056b3;
+            transform: translateX(-50%) translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
         #popup, #privacy-popup {
@@ -96,23 +102,26 @@
             border: none;
             padding: 12px;
             font-size: 18px;
+            font-weight: 700;
             cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
+            border-radius: 50px;
+            transition: all 0.3s ease;
         }
         #popup input[type="submit"]:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-    #popup h2 {
-        margin-top: 0;
-        color: #333;
-        text-align: center;  /* 헤드카피 중앙 정렬 */
-    }
-    #popup p {
-        margin-bottom: 20px;
-        color: #333;
-        text-align: center;  /* 서브카피 중앙 정렬 */
-    }
+        #popup h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+        #popup p {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
         #popup .checkbox-container {
             display: flex;
             align-items: center;
@@ -123,7 +132,7 @@
         }
         .privacy-link {
             text-decoration: underline;
-            color: #007BFF;
+            color: #FF4081;
             cursor: pointer;
         }
     </style>
@@ -132,7 +141,7 @@
     <div class="image-container">
         <img src="images/다짐_광고랜딩_ver2.png" alt="다짐 재회학개론 무료 다운 선착순 100명">
     </div>
-    <button id="cta-button" onclick="showPopup()">재회학개론 받아보기(선착순 100명)</button>
+    <button id="cta-button" onclick="showPopup()">재회학개론 받아보기(선착순 100명) ▶</button>
 
     <div id="popup">
         <span class="popup-close" onclick="closePopup()">&times;</span>
