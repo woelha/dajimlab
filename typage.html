@@ -86,7 +86,11 @@ src="https://www.facebook.com/tr?id=1063527832098227&ev=PageView&noscript=1"
     </style>
 </head>
 <body onclick="navigateToUrl()">
-    fbq('track', 'CompleteRegistration');
+<script>
+  fbq('init', '1063527832098227');
+  fbq('track', 'PageView');
+  fbq('track', 'CompleteRegistration');
+</script>
     <div class="image-container">
         <img src="images/다짐_땡큐페이지.png" alt="다짐_땡큐페이지">
     </div>
