@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1063527832098227');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1063527832098227&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재회학개론 받아보기(선착순 100명)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .image-container {
+            width: calc(100% - 40px);
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .image-container {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        #cta-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0053F3;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 90%;
+            max-width: 400px;
+        }
+        #cta-button:hover, #cta-button:focus {
+            background-color: #0056b3;
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        #popup, #privacy-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            width: 90%;
+            max-width: 400px;
+        }
+        #privacy-popup {
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+        .popup-close:hover {
+            color: #333;
+        }
+        #popup form {
+            display: flex;
+            flex-direction: column;
+        }
+        #popup input[type="text"] {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        #popup input[type="submit"] {
+            background-color: #0053F3;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        #popup input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #popup h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+        #popup p {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        #popup .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        #popup .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .privacy-link {
+            text-decoration: underline;
+            color: #0056b3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="images/다짐_재회학개론_241024" alt="다짐 재회학개론 무료 다운 선착순 100명">
+    </div>
+    <button id="cta-button" onclick="showPopup()">재회학개론 받아보기(선착순 100명) ▶</button>
+
+    <div id="popup">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <h2>재회학개론 선착순 100명<br>무료다운 OPEN</h2>
+        <p>10,000건+ 재회상담 노하우를 무료로 열람할 기회! 아직 남아있어요.</p>
+        <form action="https://leadgeny.kr/check/" onsubmit="return step_submit(this);">
+            <input type="hidden" name="seq" value="4e544d784d44493d"/>
+            <input type="hidden" name="result_url" value="https://landing.dajimlab.com/typage"/>
+            <input type="text" name="nm" placeholder="이름" required/>
+            <input type="text" name="hp" placeholder="휴대폰 번호(바로 보내드려요!)" required/>
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">(필수) <span class="privacy-link" onclick="showPrivacyPopup()">개인정보 수집 및 이용</span>에 동의합니다.</label>
+            </div>
+            <input type="submit" value="지금 받아보기"/>
+        </form>
+    </div>
+
+    <div id="privacy-popup">
+        <span class="popup-close" onclick="closePrivacyPopup()">&times;</span>
+        <h2>개인정보 수집</h2>
+        <h3>수집하는 개인정보 항목</h3>
+        <p>'(주)연결자들'은(는) 회원가입, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</p>
+        <ol>
+            <li>필수항목 : 이름, 휴대전화, 이메일, 주소</li>
+            <li>자동수집항목 : 서비스 이용기록, 방문로그, 쿠키, 방문IP정보</li>
+        </ol>
+        <h3>개인정보의 수집 및 이용목적</h3>
+        <p>'(주)연결자들'은(는) 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+        <ol>
+            <li>서비스 이용에 따른 본인식별, 실명확인, 가입의사 확인</li>
+            <li>고지사항 전달, 의사소통 경로 확보, 이벤트 당첨 물품 배송 시 정확한 배송지 정보 확보</li>
+            <li>신규 서비스 등 최신정보 개인 맞춤 서비스 제공을 위한 자료</li>
+            <li>불량회원 부정 이용 방지 및 비인가 사용 방지</li>
+            <li>기타 원활한 양질의 서비스 제공</li>
+        </ol>
+        <h3>개인정보의 보유 및 이용기간</h3>
+        <p>원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</p>
+        <p>회원으로서 '(주)연결자들'이(가) 제공하는 서비스 이용기간 동안 회원님의 개인정보는 '(주)연결자들'에서 계속 보유하게 되나 원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</p>
+        <p>이용약관 및 미풍양속을 해치는 등 서비스에 물의를 일으키는 경우, 불량사용자에 대해서는 이용자의 의사에 관계없이 강제탈퇴됩니다.</p>
+        <p>필수 개인정보 수집을 동의하지 않는 경우 귀하의 개인정보 수집을 거부할 수 있는 권리가 있으며, 이 경우 당사의 회원전용 서비스 또는 고객 문의사항에 대한 답변이 필수인 코너를 이용하는데 있어 회원 가입 또는 게시물 등록이 불가능 할 수 있습니다.</p>
+        <p>필수 정보가 아닌 선택 정보의 경우 개인정보 수집에 동의하지 않을 수 있으며 서비스 이용에 제한은 없습니다.</p>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+        function showPrivacyPopup() {
+            document.getElementById('privacy-popup').style.display = 'block';
+        }
+        
+        function closePrivacyPopup() {
+            document.getElementById('privacy-popup').style.display = 'none';
+        }
+        
+        function step_submit(frm) {
+            if(frm.nm.value == "") {
+                alert("이름이 없습니다");
+                return false;
+            }
+            var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+            if (!regExp.test(frm.hp.value)) {
+                alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+                return false;
+            }
+            if (!frm.agree.checked) {
+                alert("개인정보 수집 및 이용에 동의해주세요.");
+                return false;
+            }
+            return true;
+        }
+
+        document.body.addEventListener('click', function(event) {
+            if (event.target.id !== 'cta-button' && !event.target.closest('#popup') && !event.target.closest('#privacy-popup')) {
+                showPopup();
+            }
+        });
+    </script>
+</body>
+</html>
