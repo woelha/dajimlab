@@ -233,11 +233,6 @@
             }
             return true;
         }
-
-        document.body.addEventListener('click', function(event) {
-            if (event.target.id !== 'cta-button' && !event.target.closest('#popup') && !event.target.closest('#privacy-popup')) {
-                showPopup();
-            }
         });
 
         // New code to show CTA button at 50% scroll depth
